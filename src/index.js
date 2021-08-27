@@ -1,10 +1,7 @@
-'use strict';
+import React from "react";
+import ReactDOM from "react-dom";
+import Layout from "./components/Layout";
 
-const serverStart = require('./server.js');
+const App = () => <Layout />;
 
-const main = async () => {
-    await serverStart();
-    return;
-};
-
-main();
+ReactDOM.render(<App />, document.getElementById("root"));
