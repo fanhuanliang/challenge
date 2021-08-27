@@ -4,8 +4,9 @@
   "description": "coding challenge",
   "main": "./src/index.js",
   "scripts": {
-    "start": "node ./src/index.js",
-    "devServer": "nodemon ./src/index.js"
+    "start": "node ./server/index.js",
+    "devServer": "nodemon ./server/index.js",
+    "devBuild": "webpack --watch"
   },
   "author": "walmex-team",
   "license": "ISC",
