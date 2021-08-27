@@ -2,7 +2,8 @@
 const mockDBCalls = require('../database/index.js');
 
 const getListOfAgesOfUsersWithHandler = async (request, response) => {
-    const itemToLookup = 'carrot';
+  //In get methods sending item in the query to fetch the list
+    const itemToLookup = request.query;
     const data = await mockDBCalls.getListOfAgesOfUsersWith(itemToLookup);
     return response.status(200).send(JSON.stringify(data));
 };
