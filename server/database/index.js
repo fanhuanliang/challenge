@@ -54,7 +54,21 @@ const getListOfAgesOfUsersWith = ({item}) => {
     return mockDBCall(dataAccessMethod);
 }
 
+//add a function to get all the items, avoid duplicate
+const getItems = () => {
+    const dataAccessMethod = () => {
+      let items = [];
+      //add all the items from all the users
+      _.forEach(db.itemsOfUserByUsername, (item=>items=items.concat(...item)))
+      console.log(items)
+      //filter the duplicate items and return 
+      return _.filter(items, (item, idx)=>items.indexOf(item) === idx)
+    }
+    return mockDBCall(dataAccessMethod);  
+}
+
 module.exports = {
-    getUsers,
-    getListOfAgesOfUsersWith
+  getUsers,
+  getListOfAgesOfUsersWith,
+  getItems,
 };
