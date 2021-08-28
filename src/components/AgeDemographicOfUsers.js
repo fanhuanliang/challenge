@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { fetchItems } from '../apiHandler'
+import { fetchItems, fetchAgeOfUserWith } from "../apiHandler";
 
 const AgeDemographicOfUsers = () => {
   const [items, setItems] = useState([])
 
   useEffect(() => fetchItems().then(data=>setItems(data)), []);
-  console.log(items)
+  // fetchAgeOfUserWith('tv').then(data=>console.log(data));
+
   return (
     <div>
       age

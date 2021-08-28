@@ -2,10 +2,14 @@ import React from 'react'
 
 const User = ({username, age}) => {
   return (
-    <div>
-      {username}
-      {age}
-    </div>
+    <tr>
+      <th>
+        {username}  
+      </th>
+      <th>
+        {age}
+      </th>
+    </tr>
   )
 }
 
