@@ -8,7 +8,7 @@ const AllUsers = () => {
   const [users, setUsers] = useState([])
   
   useEffect(() => fetchUsers().then((data) => setUsers(data)), []);
-  console.log(users)
+  
   return (
     <div>
       <h1>All Users</h1>
