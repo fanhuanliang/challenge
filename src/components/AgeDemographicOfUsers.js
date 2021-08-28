@@ -13,10 +13,10 @@ const AgeDemographicOfUsers = () => {
   }
 
   useEffect(() => fetchItems().then(data=>setItems(data)), []);
-  
+
   return (
     <section>
-      <h1>Age Demographic of Users With ___</h1>
+      <h2>Age Demographic of Users With ___</h2>
       <DropdownButton id="dropdown-item-button" title="Items">
         {items.map((item) => (
           <Dropdown.Item key={item} name={item} onClick={ageOfUserWithHandler}>

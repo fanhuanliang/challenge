@@ -11,8 +11,8 @@ const AllUsers = () => {
 
   return (
     <section>
-      <h1>All Users</h1>
-      <h3>Users and their</h3>
+      <h2>All Users</h2>
+      <div>Users and their age</div>
       <Table responsive="md" hover>
         <thead>
           <tr>
