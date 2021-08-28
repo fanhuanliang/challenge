@@ -60,7 +60,6 @@ const getItems = () => {
       let items = [];
       //add all the items from all the users
       _.forEach(db.itemsOfUserByUsername, (item=>items=items.concat(...item)))
-      console.log(items)
       //filter the duplicate items and return 
       return _.filter(items, (item, idx)=>items.indexOf(item) === idx)
     }
