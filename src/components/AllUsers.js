@@ -8,9 +8,9 @@ const AllUsers = () => {
   const [users, setUsers] = useState([])
   
   useEffect(() => fetchUsers().then((data) => setUsers(data)), []);
-  
+
   return (
-    <div>
+    <section>
       <h1>All Users</h1>
       <h3>Users and their</h3>
       <Table responsive="md" hover>
@@ -26,7 +26,7 @@ const AllUsers = () => {
           ))}
         </tbody>
       </Table>
-    </div>
+    </section>
   );
 }
 
