@@ -2,7 +2,7 @@
   "name": "challenge",
   "version": "1.0.0",
   "description": "coding challenge",
-  "main": "./src/index.js",
+  "main": "./server/index.js",
   "scripts": {
     "start": "node ./server/index.js",
     "devServer": "nodemon ./server/index.js",
