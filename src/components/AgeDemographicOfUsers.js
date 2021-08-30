@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { fetchItems, fetchAgeOfUserWith } from "../apiHandler";
 import AgeDemographicOfUser from "./AgeDemographicOfUser";
 import { DropdownButton, Dropdown, Table } from "react-bootstrap";
@@ -7,9 +7,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const AgeDemographicOfUsers = () => {
   const [items, setItems] = useState([])
   const [ageDemographic, setAgeDemographic] = useState([])
+  const cache = useRef({}) 
 
   const ageOfUserWithHandler = (e) => {
-    fetchAgeOfUserWith(e.target.name).then((data) => setAgeDemographic(data));
+    let itemName = e.target.name;
+    if (cache.current[itemName]) {
+      // console.log('cache')
+      setAgeDemographic(cache.current[itemName]);
+    } else {
+      fetchAgeOfUserWith(e.target.name).then((data) => {
+         cache.current[itemName] = data;
+         setAgeDemographic(data);
+         
+      });
+    }
   }
 
   useEffect(() => fetchItems().then(data=>setItems(data)), []);
