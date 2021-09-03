@@ -1,5 +1,4 @@
 const urlBase = "http://localhost:3000";
-const urlGetListOfData = "http://localhost:3000/getListOfAgesOfUsersWith";
 
 //get users data
 const fetchUsers = () => {
